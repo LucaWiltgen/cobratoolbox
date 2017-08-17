@@ -25,9 +25,10 @@ elif [ "$ARCH" == "Windows" ]; then
     #nohup "C:\\Windows\\System32\\cmd.exe" /c "taskkill /im sh.exe /f /fi \"memusage gt 40\" 2>NUL | findstr SUCCESS >NUL && if errorlevel 1 ( echo sh was not killed ) else ( echo sh was killed )"
 
     echo " -- changing to the build directory --"
-    cd "D:\\jenkins\\workspace\\COBRAToolbox-windows\\MATLAB_VER\\$MATLAB_VER\\label\\windows-biocore"
-    echo " -- setting the git exec path --"
-    nohup "C:\\Windows\\System32\\cmd.exe" /c "SET GIT_EXEC_PATH=C:\Program Files\Git"
+    cd "/cygdrive/d/jenkins/workspace/COBRAToolbox-windows/MATLAB_VER/R2016b/label/windows-biocore"
+    #cd "D:\\jenkins\\workspace\\COBRAToolbox-windows\\MATLAB_VER\\$MATLAB_VER\\label\\windows-biocore"
+    #echo " -- setting the git exec path --"
+    #nohup "C:\\Windows\\System32\\cmd.exe" /c "SET GIT_EXEC_PATH=C:\Program Files\Git"
 
     echo " -- launching MATLAB --"
     # launch the test suite as a background process
