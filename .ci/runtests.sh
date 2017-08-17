@@ -10,16 +10,16 @@ elif [ "$ARCH" == "Windows" ]; then
     echo " -- original path --"
     nohup "C:\\Windows\\System32\\cmd.exe" /c "SET PATH=%PATH%;"
     "C:\\Windows\\System32\\cmd.exe" /c "echo %PATH%"
-    echo " -- new path --"
-    whoami
-    nohup "C:\\Windows\\System32\\cmd.exe" /c "whoami"
+    #echo " -- new path --"
+    #whoami
+    #nohup "C:\\Windows\\System32\\cmd.exe" /c "whoami"
     #nohup "runas /user:sbg-jenkins@bpf00048 cmd"
     #nohup "C:\\Windows\\System32\\cmd.exe" /c "setx PATH \"%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit"
 
     #nohup "C:\\Windows\\System32\\cmd.exe" /c "SET PATH=%PATH%;C:\Program Files\Git\mingw64\bin; && echo %PATH%"
     #nohup "C:\\Windows\\System32\\cmd.exe" /c "taskkill /im explorer.exe /f && explorer.exe"
-    echo " -- new path --"
-    nohup "C:\\Windows\\System32\\cmd.exe" /c "echo %PATH%"
+    #echo " -- new path --"
+    #nohup "C:\\Windows\\System32\\cmd.exe" /c "echo %PATH%"
 
     #nohup "C:\\Windows\\System32\\cmd.exe" /c "taskkill /im ssh-agent.exe /f /fi \"memusage gt 40\" 2>NUL | findstr SUCCESS >NUL && if errorlevel 1 ( echo ssh-agent was not killed ) else ( echo ssh-agent was killed )"
     #nohup "C:\\Windows\\System32\\cmd.exe" /c "taskkill /im sh.exe /f /fi \"memusage gt 40\" 2>NUL | findstr SUCCESS >NUL && if errorlevel 1 ( echo sh was not killed ) else ( echo sh was killed )"
@@ -29,8 +29,8 @@ elif [ "$ARCH" == "Windows" ]; then
     echo " -- launching MATLAB --"
 
     # launch the test suite as a background process
-    nohup "C:\\Program Files\\Matlab\\$MATLAB_VER\\\bin\\matlab.exe" -nojvm -nodesktop -nosplash -useStartupFolderPref -logfile output.log -wait -r "cd test; testAll;" & PID=$!
-
+    nohup "C:\\Program Files\\Matlab\\$MATLAB_VER\\\bin\\matlab.exe" -nojvm -nodesktop -nosplash -useStartupFolderPref -logfile output.log -wait -r "system('which git'); system('git --version'); system('whoami'); system('pwd'); initCobraToolbox" & PID=$! #cd test; testAll;
+    #"C:\\Program Files\\Matlab\\R2016b\\\bin\\matlab.exe" -nojvm -nodesktop -nosplash -useStartupFolderPref -logfile output.log -wait -r "initCobraToolbox;"
     # follow the log file
     tail -n0 -F --pid=$! output.log 2>/dev/null
 
