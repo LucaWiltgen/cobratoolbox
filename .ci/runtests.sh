@@ -11,7 +11,9 @@ elif [ "$ARCH" == "Windows" ]; then
     nohup "C:\\Windows\\System32\\cmd.exe" /c "SET PATH=%PATH%;"
     "C:\\Windows\\System32\\cmd.exe" /c "echo %PATH%"
     echo " -- new path --"
-    nohup "C:\\Windows\\System32\\cmd.exe" /c "SETx PATH=%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit"
+    whoami
+    nohup "C:\\Windows\\System32\\cmd.exe" /c "whoami"
+    nohup "C:\\Windows\\System32\\cmd.exe" /c "SET PATH=%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit"
     "C:\\Windows\\System32\\cmd.exe" /c "echo %PATH%"
 
     #nohup "C:\\Windows\\System32\\cmd.exe" /c "taskkill /im ssh-agent.exe /f /fi \"memusage gt 40\" 2>NUL | findstr SUCCESS >NUL && if errorlevel 1 ( echo ssh-agent was not killed ) else ( echo ssh-agent was killed )"
