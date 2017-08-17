@@ -13,7 +13,7 @@ elif [ "$ARCH" == "Windows" ]; then
     echo " -- new path --"
     whoami
     nohup "C:\\Windows\\System32\\cmd.exe" /c "whoami"
-    nohup "runas /user:sbg-jenkins@bpf00048 cmd"
+    #nohup "runas /user:sbg-jenkins@bpf00048 cmd"
     #nohup "C:\\Windows\\System32\\cmd.exe" /c "setx PATH \"%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit"
 
     #nohup "C:\\Windows\\System32\\cmd.exe" /c "SET PATH=%PATH%;C:\Program Files\Git\mingw64\bin; && echo %PATH%"
