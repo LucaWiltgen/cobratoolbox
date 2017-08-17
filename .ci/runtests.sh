@@ -31,7 +31,7 @@ elif [ "$ARCH" == "Windows" ]; then
     #nohup "C:\\Windows\\System32\\cmd.exe" /c "SET GIT_EXEC_PATH=C:\Program Files\Git"
 
     echo " -- launching MATLAB --"
-    sh
+    "C:\\cygwin64\\bin\\sh.exe"
     # launch the test suite as a background process
     nohup "/cygdrive/c/Program Files/MATLAB/R2016b/bin/matlab" -useStartupFolderPref -logfile output.log -wait -r "system('which git'); system('git --version'); system('whoami'); system('pwd'); system('git submodule');" & PID=$!
     #nohup "C:\\Program Files\\Matlab\\$MATLAB_VER\\\bin\\matlab.exe"  -useStartupFolderPref -logfile output.log -wait -r "system('which git'); system('git --version'); system('whoami'); system('pwd'); initCobraToolbox" & PID=$! #cd test; testAll;
