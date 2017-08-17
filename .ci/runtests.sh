@@ -7,9 +7,13 @@ elif [ "$ARCH" == "macOS" ]; then
 
 elif [ "$ARCH" == "Windows" ]; then
     # change to the build directory
-    echo " -- Changing to the build directory --"
+    echo " -- killing the sh process --"
+    nohup "C:\\Windows\\System32\\cmd.exe" /c "taskkill /im ssh-agent.exe /f"
+    nohup "C:\\Windows\\System32\\cmd.exe" /c "taskkill /im sh.exe /f"
+
+    echo " -- changing to the build directory --"
     cd "D:\\jenkins\\workspace\\COBRAToolbox-windows\\MATLAB_VER\\$MATLAB_VER\\label\\windows-biocore"
-    echo " -- Launching MATLAB --"
+    echo " -- launching MATLAB --"
 
     # launch the test suite as a background process
     nohup "C:\\Program Files\\Matlab\\$MATLAB_VER\\\bin\\matlab.exe" -nojvm -nodesktop -nosplash -useStartupFolderPref -logfile output.log -wait -r "cd test; testAll;" & PID=$!
