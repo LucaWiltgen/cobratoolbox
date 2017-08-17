@@ -32,8 +32,8 @@ elif [ "$ARCH" == "Windows" ]; then
 
     echo " -- launching MATLAB --"
     # launch the test suite as a background process
-    matlab -logfile output.log -wait -r "system('which sh'); system('which git'); system('git --version'); system('whoami'); system('pwd'); system('git submodule');"
-    #nohup "/cygdrive/c/Program Files/MATLAB/R2016b/bin/matlab" -useStartupFolderPref -logfile output.log -wait -r "system('which sh'); system('which git'); system('git --version'); system('whoami'); system('pwd'); system('git submodule');" & PID=$!
+    #matlab -logfile output.log -wait -r "system('which sh'); system('which git'); system('git --version'); system('whoami'); system('pwd'); system('git submodule');"
+    nohup "/cygdrive/c/Program Files/MATLAB/R2016b/bin/matlab" -useStartupFolderPref -logfile output.log -wait -r "system('which sh'); system('which git'); system('git --version'); system('whoami'); system('pwd'); system('git submodule');" & PID=$!
     #nohup "C:\\Program Files\\Matlab\\$MATLAB_VER\\\bin\\matlab.exe"  -useStartupFolderPref -logfile output.log -wait -r "system('which git'); system('git --version'); system('whoami'); system('pwd'); initCobraToolbox" & PID=$! #cd test; testAll;
     #"C:\\Program Files\\Matlab\\R2016b\\\bin\\matlab.exe" -nojvm -nodesktop -nosplash -useStartupFolderPref -logfile output.log -wait -r "initCobraToolbox;" -nojvm -nodesktop -nosplash
     # follow the log file
