@@ -7,9 +7,9 @@ elif [ "$ARCH" == "macOS" ]; then
 
 elif [ "$ARCH" == "Windows" ]; then
     # change to the build directory
-    echo " -- original path --"
-    nohup "C:\\Windows\\System32\\cmd.exe" /c "SET PATH=%PATH%;"
-    "C:\\Windows\\System32\\cmd.exe" /c "echo %PATH%"
+    #echo " -- original path --"
+    #nohup "C:\\Windows\\System32\\cmd.exe" /c "SET PATH=%PATH%;"
+    #"C:\\Windows\\System32\\cmd.exe" /c "echo %PATH%"
     #echo " -- new path --"
     #whoami
     #nohup "C:\\Windows\\System32\\cmd.exe" /c "whoami"
@@ -31,7 +31,6 @@ elif [ "$ARCH" == "Windows" ]; then
     #nohup "C:\\Windows\\System32\\cmd.exe" /c "SET GIT_EXEC_PATH=C:\Program Files\Git"
 
     echo " -- launching MATLAB --"
-    export Path=/
     # launch the test suite as a background process
     #matlab -logfile output.log -wait -r "system('which sh'); system('which git'); system('git --version'); system('whoami'); system('pwd'); system('git submodule');"
     nohup "/cygdrive/c/Program Files/MATLAB/R2016b/bin/matlab" -nojvm -nodesktop -nosplash -useStartupFolderPref -logfile output.log -wait -r "system('which sh'); system('which git'); system('git --version'); system('whoami'); system('pwd'); system('git submodule');" & PID=$!
