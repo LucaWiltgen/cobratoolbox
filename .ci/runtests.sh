@@ -30,6 +30,7 @@ elif [ "$ARCH" == "Windows" ]; then
     #echo " -- setting the git exec path --"
     #nohup "C:\\Windows\\System32\\cmd.exe" /c "SET GIT_EXEC_PATH=C:\Program Files\Git"
 
+    
     echo " -- launching MATLAB --"
     unset Path
     # launch the test suite as a background process
