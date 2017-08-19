@@ -38,7 +38,7 @@ elif [ "$ARCH" == "Windows" ]; then
     #nohup "C:\\Program Files\\Matlab\\$MATLAB_VER\\\bin\\matlab.exe"  -useStartupFolderPref -logfile output.log -wait -r "system('which git'); system('git --version'); system('whoami'); system('pwd'); initCobraToolbox" & PID=$! #cd test; testAll;
     #"C:\\Program Files\\Matlab\\R2016b\\\bin\\matlab.exe" -nojvm -nodesktop -nosplash -useStartupFolderPref -logfile output.log -wait -r "initCobraToolbox;" -nojvm -nodesktop -nosplash
     # follow the log file
-    #tail -n0 -F --pid=$! output.log 2>/dev/null
+    tail -n0 -F --pid=$! output.log 2>/dev/null
 
     # wait until the background process is done
     wait $PID
